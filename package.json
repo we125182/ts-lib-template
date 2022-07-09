@@ -1,0 +1,62 @@
+{
+  "name": "@we125182/pkg-name",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "pkg-name",
+  "author": "we125182",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/we125182/pkg-name#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/we125182/pkg-name.git"
+  },
+  "bugs": "https://github.com/we125182/pkg-name/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "esno": "^0.16.3",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
+    "unbuild": "^0.7.4",
+    "vite": "^2.9.12",
+    "vitest": "^0.15.1"
+  }
+}
